@@ -105,3 +105,11 @@ body{
     margin-top: 10px;
     display: none;
 }
+
+.temp-container{
+    display: flex;
+    flex-direction: col;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}

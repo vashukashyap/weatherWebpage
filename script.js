@@ -22,6 +22,7 @@ const checkWeather = async (city) => {
     if(document.querySelector('.error').style.display != 'none'){
     document.querySelector('.error').style.display = 'none';
     }
+    document.querySelector('.weather-info').innerHTML = 'Weather : ' + data.weather[0].main
     document.querySelector('.weather-icon').src = iconurl
     document.querySelector('.city').innerHTML = data.name;
     document.querySelector('.temp').innerHTML = data.main.temp + '°C';
@@ -39,6 +40,11 @@ searchBtn.addEventListener('click', ()=>{
     checkWeather(searchBox.value);
 })
 
+searchBox.addEventListener('keypress', (e)=>{
+    if(e.key=='Enter'){
+        checkWeather(searchBox.value);
+    }
+})
 
 
 // checkWeather()
